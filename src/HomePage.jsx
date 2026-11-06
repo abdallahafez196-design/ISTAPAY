@@ -9,8 +9,8 @@ export default function HomePage() {
 
   useEffect(() => {
     let savedBalance = +localStorage.getItem("balance");
-        let savedTransaction = JSON.parse(localStorage.getItem("transactions"));
-    setBalance(savedBalance);
+    let savedTransaction =
+  JSON.parse(localStorage.getItem("transactions")) || [];
     setTransactions(savedTransaction);
   }, []);
 
