@@ -9,9 +9,7 @@ export default function HomePage() {
 
   useEffect(() => {
     let savedBalance = +localStorage.getItem("balance");
-    let savedTransaction =
-  JSON.parse(localStorage.getItem("transactions")) || [];
-    
+    let savedTransaction = JSON.parse(localStorage.getItem("transactions"));
     setBalance(savedBalance);
     setTransactions(savedTransaction);
   }, []);
@@ -59,7 +57,7 @@ export default function HomePage() {
       localStorage.setItem("balance", newBalance);
       localStorage.setItem("transactions", transJSON);
     } else {
-      toast.error(" ابو شراب مقطوع🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣")
+      toast.error("ابو شراب مخروم🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣🤣");
     }
   };
 
@@ -106,7 +104,7 @@ export default function HomePage() {
             </tr>
           </thead>
           <tbody>
-    {            transactions.map((el, index) => {
+            {transactions.map((el, index) => {
               return (
                 <tr
                   key={index}
